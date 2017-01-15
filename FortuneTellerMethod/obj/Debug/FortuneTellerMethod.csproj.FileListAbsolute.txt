@@ -1,0 +1,6 @@
+c:\users\wecancodeit\documents\visual studio 2015\Projects\FortuneTellerMethod\FortuneTellerMethod\bin\Debug\FortuneTellerMethod.exe.config
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\FortuneTellerMethod\FortuneTellerMethod\obj\Debug\FortuneTellerMethod.csprojResolveAssemblyReference.cache
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\FortuneTellerMethod\FortuneTellerMethod\bin\Debug\FortuneTellerMethod.exe
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\FortuneTellerMethod\FortuneTellerMethod\bin\Debug\FortuneTellerMethod.pdb
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\FortuneTellerMethod\FortuneTellerMethod\obj\Debug\FortuneTellerMethod.exe
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\FortuneTellerMethod\FortuneTellerMethod\obj\Debug\FortuneTellerMethod.pdb
