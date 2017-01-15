@@ -13,129 +13,50 @@ namespace FortuneTellerMethod
         {
             Console.WriteLine("Please Enter your First Name");
             string firstName = Console.ReadLine();
-            if (firstName.ToUpper() == "QUIT")
-            {
-                Environment.Exit(0);
-            }
-            else if(firstName.ToUpper() == "RESTART")
-            {
 
-                Main(args);
-                Environment.Exit(0);
-            }
-
+            RestartQuit(firstName);
             Console.WriteLine("Please Enter your Last Name");
             string lastName = Console.ReadLine();
-            if (lastName.ToUpper() == "QUIT")
-            {
-                Environment.Exit(0);
-            }
-            else if (lastName.ToUpper() == "RESTART")
-            {
 
-                Main(args);
-                Environment.Exit(0);
-            }
-
-
-
+            RestartQuit(lastName);
             string greetsYou = GreetSucker(firstName, lastName);
-             Console.WriteLine(greetsYou);
+            Console.WriteLine(greetsYou);
            
             Console.WriteLine("How old are you?");
-            //if (Console.ReadLine() == "")
-            //{
-            //    Main(args);
-            //}
             string strAge = Console.ReadLine();
-            if (strAge.ToUpper() == "QUIT")
-            {
-                Environment.Exit(0);
-            }
-            else if (strAge.ToUpper() == "RESTART")
-            {
-
-                Main(args);
-                Environment.Exit(0);
-            }
+            RestartQuit(strAge);
             int age = int.Parse(strAge);
             int retireTime = AgeForRetire(age);
             
-
             Console.WriteLine("What is the number of the Month you were born in:");
-
             string monthStr = Console.ReadLine();
-
-            if (monthStr.ToUpper() == "QUIT")
-            {
-                Environment.Exit(0);
-            }
-            else if (monthStr.ToUpper() == "RESTART")
-            {
-
-                Main(args);
-                Environment.Exit(0);
-            }
-
+            RestartQuit(monthStr);
             int bMonth = int.Parse(monthStr);
             double bankCash = CashBank(bMonth);
 
             Console.WriteLine("Pick your favorite ROYGBIV.  If you don't know what ROYGBIV is type in Help");
             string cRainbow = Console.ReadLine();
-
+            RestartQuit(cRainbow);
             if (cRainbow.ToUpper() == "HELP")
             {
                 Console.WriteLine("ROYGBIV is the color rainbow");
                 Console.WriteLine("R is Red \nO is Orange \nY is Yellow \nG is Green \nB is Blue \nI is Indigo \nV is Violet");
                 Console.WriteLine("Please enter a ROYGBIV color");
                 cRainbow = Console.ReadLine();
-                if (cRainbow.ToUpper() == "QUIT")
-                {
-                    Environment.Exit(0);
-                }
-                else if (cRainbow.ToUpper() == "RESTART")
-                {
-                    Main(args);
-                    Environment.Exit(0);
-                }
-
+                RestartQuit(cRainbow);
             }
-            else if (cRainbow.ToUpper() == "QUIT")
-            {
-                Environment.Exit(0);
-            }
-            else if (cRainbow.ToUpper() == "RESTART")
-            {
-
-                Main(args);
-                Environment.Exit(0);
-            }
-
-
-            //Method 3 goes here
             string yourTransport = VehicleMode(cRainbow);
             
             //Number of Siblings
             Console.WriteLine("Please enter the number of Siblings you have");
             string siblingString = Console.ReadLine();
-            if (siblingString.ToUpper() == "QUIT")
-            {
-                Environment.Exit(0);
-            }
-            else if (siblingString.ToUpper() == "RESTART")
-            {
 
-                Main(args);
-                Environment.Exit(0);
-            }
-
+            RestartQuit(siblingString);
             int siblingsNum = int.Parse(siblingString);
-            //Method 5
             string vactionHome = FutureHome(siblingsNum);
-            //End part 1
+
             Console.WriteLine("Zoltar has read your Future!");
             Console.WriteLine(firstName + " " + lastName + " will retire in " + retireTime + " years with $" + bankCash + " in the bank, a vaction home in " + vactionHome + " and a " + yourTransport);
-
 
             FortuneOpinion();
 
@@ -254,6 +175,7 @@ namespace FortuneTellerMethod
         {
             //Instead of just doing one phrase I wanted a random generated one
             Random fortuneRandom = new Random();
+            Console.WriteLine();
             int fortuneNumber = fortuneRandom.Next(1, 5);
             switch(fortuneNumber)
             {
@@ -273,19 +195,20 @@ namespace FortuneTellerMethod
 
             }
         }//End fortune
-        //Extra Credit stuff goes below
-        static void RestartOrQuit(string resq)
+         //Extra Credit stuff goes below
+        static void RestartQuit(string cmdQuit)
         {
-            if (resq == "quit")
+            if (cmdQuit.ToUpper() == "QUIT")
             {
                 Environment.Exit(0);
             }
-            if (resq ==" restart")
+            else if (cmdQuit.ToUpper() == "RESTART")
             {
-              
-
+                Console.Clear();
+                Main(Environment.GetCommandLineArgs());
+                Environment.Exit(0);
             }
-  
-        }
+
+        }//end RestartQuit
     }
 }
