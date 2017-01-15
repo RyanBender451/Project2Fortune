@@ -5,6 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+/*This is a update for the Fortune Teller program that puts most of the functions into methods separate from the Main
+ * added a method to restart and quit the program at anytime the user can type into the console
+ * instead of just choosing one phrase for the opinion on the fortune I added a random number generator to the opinion method
+ * the method will decide what the fortune teller thinks of the fortune based on the number generated
+ * 
+ * 
+ */
+
 namespace FortuneTellerMethod
 {
     class Program
