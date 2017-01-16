@@ -113,40 +113,56 @@ namespace FortuneTellerMethod
         }//end cashBank
         static string VehicleMode(string rcolor)
         {
+
+            Console.WriteLine("Do you have another ROYGBIV, yes or no");
+            string yesOrNo = Console.ReadLine();
             string transportColor;
-            switch (rcolor.ToUpper())
+            if (yesOrNo.ToUpper() == "YES")
             {
-                case "RED":
-                    transportColor = "Chevy Corevette";
-                    break;
-
-                case "ORANGE":
-                    transportColor = "Ford Mustang";
-                    break;
-
-                case "YELLOW":
-                    transportColor = "Cadillac";
-                    break;
-
-                case "GREEN":
-                    transportColor = "Ford F-150";
-                    break;
-                    
-                case "BLUE":
-                    transportColor = "Dodge RAM";
-                    break;
-
-                case "INDIGO":
-                    transportColor = "Jeep Wrangler";
-                    break;
-                case "VIOLET":
-                    transportColor = "Volkswagon Beetle";
-                    break;
-
-                default:
-                    transportColor = "squeaky shopping cart";
-                    break;
+                Console.WriteLine("Pick your second color");
+                string rcolor2 = Console.ReadLine();
+                transportColor = VehicleMode(rcolor, rcolor2);
+                
             }
+            else
+            {
+                Console.WriteLine("You either said No or picked an invalid response");
+                switch (rcolor.ToUpper())
+                {
+                    case "RED":
+                        transportColor = "Chevy Corevette";
+                        break;
+
+                    case "ORANGE":
+                        transportColor = "Ford Mustang";
+                        break;
+
+                    case "YELLOW":
+                        transportColor = "Cadillac";
+                        break;
+
+                    case "GREEN":
+                        transportColor = "Ford F-150";
+                        break;
+
+                    case "BLUE":
+                        transportColor = "Dodge RAM";
+                        break;
+
+                    case "INDIGO":
+                        transportColor = "Jeep Wrangler";
+                        break;
+                    case "VIOLET":
+                        transportColor = "Volkswagon Beetle";
+                        break;
+
+                    default:
+                        transportColor = "squeaky shopping cart";
+                        break;
+                }
+
+            }
+
 
             return transportColor;
         }//vehicleMode
@@ -204,6 +220,47 @@ namespace FortuneTellerMethod
             }
         }//End fortune
          //Extra Credit stuff goes below
+         static string VehicleMode(string rcolor, string r2color)
+        {
+            string vehicleType;
+            if (rcolor.ToUpper() == r2color.ToUpper())
+            {
+                vehicleType = "Neon Orange AMC Gremlin";
+            }
+            else if (r2color.ToUpper() == "RED")
+            {
+                vehicleType = "Ferrari California T";
+            }
+            else if(r2color.ToUpper() == "ORANGE")
+            {
+                vehicleType = "Aston Martin Rapide S";
+            }
+            else if(r2color.ToUpper() == "YELLOW")
+            {
+                vehicleType = "Mercedes-Benz SL65 AMG";
+            }
+            else if(r2color.ToUpper() == "GREEN")
+            {
+                vehicleType = "Bentley Continental GT Speed";
+            }
+            else if(r2color.ToUpper() == "BLUE")
+            {
+                vehicleType = "Rolls-Royce Wraith";
+            }
+            else if(r2color.ToUpper() == "INDIGO")
+            {
+                vehicleType = "Lamborghini Veneno";
+            }
+            else if(r2color.ToUpper() == "VIOLET")
+            {
+                vehicleType = "Bugatti Veyron";
+            }
+            else 
+            {
+                vehicleType = "Ford Pinto";
+            }
+            return vehicleType;
+        }
         static void RestartQuit(string cmdQuit)
         {
             if (cmdQuit.ToUpper() == "QUIT")
