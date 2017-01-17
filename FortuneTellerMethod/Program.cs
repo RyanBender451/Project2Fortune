@@ -19,6 +19,7 @@ namespace FortuneTellerMethod
     {
         static void Main(string[] args)
         {
+            //First Name and Last Name information
             Console.WriteLine("Please Enter your First Name");
             string firstName = Console.ReadLine();
 
@@ -30,18 +31,21 @@ namespace FortuneTellerMethod
             string greetsYou = GreetSucker(firstName, lastName);
             Console.WriteLine(greetsYou);
            
+            //Age info
             Console.WriteLine("How old are you?");
             string strAge = Console.ReadLine();
             RestartQuit(strAge);
             int age = int.Parse(strAge);
             int retireTime = AgeForRetire(age);
             
+            //Month info
             Console.WriteLine("What is the number of the Month you were born in:");
             string monthStr = Console.ReadLine();
             RestartQuit(monthStr);
             int bMonth = int.Parse(monthStr);
             double bankCash = CashBank(bMonth);
-
+            
+            //Favorite Color
             Console.WriteLine("Pick your favorite ROYGBIV.  If you don't know what ROYGBIV is type in Help");
             string cRainbow = Console.ReadLine();
             RestartQuit(cRainbow);
@@ -72,7 +76,7 @@ namespace FortuneTellerMethod
 
         static string GreetSucker(string firstName, string lastName)
         {
-            string greetingYou = "Greetings," + firstName + " " + lastName + ", I am the Great Zoltar.\nI, The Great Zoltar, will give you a fortune";
+            string greetingYou = "Greetings, " + firstName + " " + lastName + ", I am the Great Zoltar.\nI, The Great Zoltar, will give you a fortune";
             return greetingYou;
         }//end GreetSucker
         static int AgeForRetire(int age)
@@ -95,11 +99,11 @@ namespace FortuneTellerMethod
             double retireFund;
             if (birthMonth >= 1 && birthMonth <= 4)
             {
-                retireFund = 400000001.40;
+                retireFund = 400000001.49;
             }
             else if (birthMonth >= 5 && birthMonth <= 8 )
             {
-                retireFund = 8100000005.80;
+                retireFund = 8100000005.89;
             }
             else if (birthMonth >= 9 && birthMonth <= 12)
             {
@@ -113,16 +117,16 @@ namespace FortuneTellerMethod
         }//end cashBank
         static string VehicleMode(string rcolor)
         {
-
             Console.WriteLine("Do you have another ROYGBIV, yes or no");
             string yesOrNo = Console.ReadLine();
+            RestartQuit(yesOrNo);
             string transportColor;
             if (yesOrNo.ToUpper() == "YES")
             {
                 Console.WriteLine("Pick your second color");
                 string rcolor2 = Console.ReadLine();
-                transportColor = VehicleMode(rcolor, rcolor2);
-                
+                RestartQuit(rcolor2);
+                transportColor = VehicleMode(rcolor, rcolor2);           
             }
             else
             {
@@ -160,9 +164,7 @@ namespace FortuneTellerMethod
                         transportColor = "squeaky shopping cart";
                         break;
                 }
-
             }
-
 
             return transportColor;
         }//vehicleMode
@@ -260,7 +262,7 @@ namespace FortuneTellerMethod
                 vehicleType = "Ford Pinto";
             }
             return vehicleType;
-        }
+        }//Overloaded Method VehicleMode
         static void RestartQuit(string cmdQuit)
         {
             if (cmdQuit.ToUpper() == "QUIT")
